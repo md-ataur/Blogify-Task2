@@ -19,10 +19,10 @@ const SearchPage = () => {
   const fetchApi = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch("http://localhost:9000/house");
+      const response = await fetch("http://localhost:7000/v1/property/");
       if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-      const data = await response.json();
-      setProperties(data);
+      const responseData = await response.json();
+      setProperties(responseData.data);
     } catch (error) {
       console.log(error.message);
     } finally {
@@ -36,11 +36,16 @@ const SearchPage = () => {
 
   useEffect(() => {
     if (properties && dateSearch) {
-      setFilterData(properties.filter((property) => property.date.includes(dateSearch)));
+      setFilterData(
+        properties.filter((property) => {
+          const propertyDate = property.date.split("T")[0];
+          return propertyDate === dateSearch;
+        })
+      );
     } else {
       setFilterData(properties);
     }
-  }, [filterData, properties, dateSearch]);
+  }, [properties, dateSearch]);
 
   return (
     <>
@@ -51,8 +56,8 @@ const SearchPage = () => {
           <div className="w-[800px]">
             {filterData.length > 0 &&
               filterData.map((property) => (
-                <div key={property.id} className="flex gap-6 border-b pb-5 mb-5">
-                  <img width="300px" src={property.src} alt="" />
+                <div key={property._id} className="flex gap-6 border-b pb-5 mb-5">
+                  <img width="300px" src={property.url} alt="" />
                   <div className="w-[400px] flex flex-col justify-between">
                     <div className="flex justify-between items-center">
                       <div>
