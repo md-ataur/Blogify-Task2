@@ -1,0 +1,47 @@
+{
+  "house": [
+    {
+      "id": 1,
+      "title": "Bordeaux Getaway",
+      "guests": "8",
+      "bed": "4",
+      "bath": "3",
+      "wifi": true,
+      "kitchen": true,
+      "parking": true,
+      "price": 325,
+      "reviews": 315,
+      "date": "2024-01-01",
+      "src": "../src/assets/images/image1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Charming Waterfront Condo",
+      "guests": "6",
+      "bed": "3",
+      "bath": "2",
+      "wifi": true,
+      "kitchen": true,
+      "parking": true,
+      "price": 250,
+      "reviews": 150,
+      "date": "2024-01-02",
+      "src": "../src/assets/images/image2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Historic City Center",
+      "guests": "5",
+      "bed": "3",
+      "bath": "2",
+      "wifi": true,
+      "kitchen": true,
+      "parking": true,
+      "price": 180,
+      "reviews": 60,
+      "date": "2024-01-03",
+      "src": "../src/assets/images/image3.jpg"
+    }
+
+  ]
+}

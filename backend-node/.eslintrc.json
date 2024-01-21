@@ -1,0 +1,31 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:node/recommended",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "node/no-unpublished-require": "off",
+    "no-undef": "off",
+    "no-return-await": "off",
+    "consistent-return": "off",
+    "no-console": "off",
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off",
+	"array-callback-return": "off"
+  }
+}
